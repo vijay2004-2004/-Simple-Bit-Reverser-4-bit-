@@ -1,0 +1,14 @@
+module tb_bit_reverser;
+    reg [3:0] in;
+    wire [3:0] out;
+
+    bit_reverser uut(in, out);
+
+    initial begin
+        $dumpfile("bit_rev.vcd"); $dumpvars(0, tb_bit_reverser);
+        in = 4'b0001; #10;
+        in = 4'b1100; #10;
+        in = 4'b1010; #10;
+        $finish;
+    end
+endmodule
